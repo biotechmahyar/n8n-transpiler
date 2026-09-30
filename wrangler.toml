@@ -1,0 +1,20 @@
+# n8n-transpiler — Cloudflare Worker
+# Converts n8n workflow JSON into deployable Worker projects
+
+name = "n8n-transpiler"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[build.upload_source_maps]
+enabled = true
+
+# Auth token for /transpile endpoint
+# Set with: wrangler secret put TRANSPILER_TOKEN
+# [vars]
+# TRANSPILER_TOKEN = "" # Use wrangler secret instead
+
+[env.staging]
+name = "n8n-transpiler-staging"
+
+[env.production]
+name = "n8n-transpiler-production"
